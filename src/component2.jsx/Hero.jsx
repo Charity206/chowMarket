@@ -3,10 +3,10 @@ import Herofood from "../assets/herofood.jpg";
 
 function Hero() {
   return (
-    <section className="px-6 lg:px-16 py-10 md:py-16 lg:py-20 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16 overflow-hidden">
+    <section className="px-6 lg:px-16 md:py-16 lg:py-20 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16 overflow-hidden">
       
       {/* LEFT SIDE */}
-      <div className="max-w-2xl text-center lg:text-left">
+      <div className="max-w-2xl ">
 
         <div className="bg-orange-100 text-orange-500 inline-flex px-4 py-2 rounded-full text-sm font-semibold mb-6">
           Fastest Food Delivery
@@ -40,7 +40,7 @@ function Hero() {
       </div>
 
       {/* RIGHT SIDE */}
-      <div className="relative w-full flex justify-center">
+      <div className="relative">
 
         <div className="absolute w-[250px] h-[250px] sm:w-[400px] sm:h-[400px] lg:w-[700px] lg:h-[700px] bg-orange-500 rounded-full blur-3xl opacity-20"></div>
 
