@@ -6,7 +6,7 @@ function Hero() {
     <section className="px-6 lg:px-16 md:py-16 lg:py-20 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16 overflow-hidden">
       
       {/* LEFT SIDE */}
-      <div className="max-w-2xl ">
+      <div className="max-w-2xl text-center lg:text-left">
 
         <div className="bg-orange-100 text-orange-500 inline-flex px-4 py-2 rounded-full text-sm font-semibold mb-6">
           Fastest Food Delivery

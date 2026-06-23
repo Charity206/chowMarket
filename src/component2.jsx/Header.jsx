@@ -10,7 +10,7 @@ function Header(){
                 
                 <ul className=" md:flex items-center gap-10 text-[15px] font-medium">
                     <Link to="/">
-                    <li className="cursor-pointer hover:text-orange-500 pointer transition">Market</li>
+                    <li className="cursor-pointer hover:text-orange-500 pointer transition">Home</li>
                     </Link>
                     <Link to="/Seller">
                     <li className="cursor-pointer hover:text-orange-500 transition">Sell on chowMarket</li>
