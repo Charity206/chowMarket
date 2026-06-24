@@ -27,12 +27,36 @@ function CategoryPage() {
     )
       .then((res) => res.json())
       .then((data) => {
-        setFoods(data.meals || []);
+          const prices = [
+          2200,
+          2500,
+          2700,
+          3000,
+          3200,
+          3500,
+          3700,
+          4000,
+          4200,
+          4500,
+        ];
+
+        const foodsWithPrice = data.meals.map((meal) => ({
+          ...meal,
+          price:
+            prices[
+              Number(meal.idMeal) % prices.length
+            ],
+        }));
+
+        setFoods(foodsWithPrice);
       });
   }, [categoryName]);
 
+        
+    
+
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen ">
 
       {/* LEFT SIDEBAR */}
 
@@ -45,7 +69,7 @@ function CategoryPage() {
           top-0
           h-screen
           bg-white
-          border-r
+          border-r border-orange-400
           p-6
         "
       >
@@ -74,11 +98,48 @@ function CategoryPage() {
 
       {/* RIGHT CONTENT */}
 
-      <main className="flex-1 px-6 lg:px-12 py-10">
+     <main className="flex-1 min-w-0 px-4 md:px-6 lg:px-12 py-10">
+
+  <div
+    
+  className="
+    md:hidden
+    sticky
+    top-[72px]
+    z-30
+    bg-white
+    border-b
+    border-orange-500
+    py-3
+    mb-6
+    overflow-x-auto
+    
+    
+  "
+>
+  
+    <div className="flex gap-3">
+
+      {categories.map((item) => (
+        <NavLink
+          key={item}
+          to={`/category/${item}`}
+          className={({ isActive }) =>
+            isActive
+              ? "bg-orange-500 text-white px-4 py-2 rounded-full whitespace-nowrap"
+              : "bg-gray-100 px-4 py-2 rounded-full whitespace-nowrap"
+          }
+        >
+          {item.charAt(0).toUpperCase() + item.slice(1)}
+        </NavLink>
+      ))}
+
+    </div> 
+  </div>
 
         <div className="mb-10">
 
-          <h1 className="text-4xl font-bold capitalize">
+          <h1 className="text-2xl font-bold capitalize">
             {categoryName}
           </h1>
 
@@ -102,7 +163,7 @@ function CategoryPage() {
 
         ) : (
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
 
             {foods.map((food) => (
 
@@ -113,7 +174,7 @@ function CategoryPage() {
                   rounded-[30px]
                   p-4
                   shadow-sm
-                  hover:shadow-xl
+                  hover:shadow-2xl
                   transition
                 "
               >
@@ -136,13 +197,13 @@ function CategoryPage() {
                   <h3 className="text-xl font-bold"> {food.strMeal} </h3>
 
                   <p className="text-orange-500 font-bold">
-                    ₦{`${3500}`}
+                    ₦{food.price.toLocaleString()}
                   </p>
 
                 </div>
 
                   <p className="text-gray-500 text-sm mt-2">
-                    Freshly prepared <span className="text-xl font-bold"> {food.strMeal}</span>
+                    Freshly prepared <span className="text-sm font-bold"> {food.strMeal}</span>
                   </p>
 
                   <button onClick={() =>
@@ -150,7 +211,7 @@ function CategoryPage() {
     id: food.idMeal,
     name: food.strMeal,
     image: food.strMealThumb,
-    price: 3500,
+    price: food.price,
   })
 }
                     className="

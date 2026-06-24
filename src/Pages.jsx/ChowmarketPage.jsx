@@ -2,7 +2,7 @@
 import Hero from "../component2.jsx/Hero"
 import Foodgrid from "../component2.jsx/Foodgrid"
 import Menu from "../component2.jsx/menu"
-import FoodPage from "../component2.jsx/FoodPage"
+
 
 
 
@@ -13,7 +13,7 @@ function Chowmarket({ addToCart }){
             <Menu/>
             <Foodgrid
             addToCart={addToCart} />
-        <FoodPage/>
+        
             
             
 

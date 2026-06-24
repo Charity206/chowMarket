@@ -46,7 +46,7 @@ function Menu() {
   ];
 
   return (
-    <section className="px-6 lg:px-16">
+    <section className="px-6 py-6 lg:px-16">
       <div className="flex gap-4 overflow-x-auto pb-4">
 
         {categories.map((item) => (

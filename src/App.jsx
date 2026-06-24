@@ -40,13 +40,15 @@ import CategoryPage from "./Pages.jsx/CategoryPage";
 import LoginPage from "./Pages.jsx/LoginPage";
 
 import { CartContext } from "./context.jsx/CartContext";
+import Menu from "./component2.jsx/menu";
+import ScrollToTop from "./Pages.jsx/ScrollToTop";
 
 function App() {
   const { showCart, setShowCart } = useContext(CartContext);
 
   return (
     <div className="bg-[#f8f8f8] min-h-screen text-black">
-
+<ScrollToTop/>
       <Header />
 
       {/* OVERLAY */}
@@ -90,6 +92,8 @@ function App() {
         <Route path="/Seller" element={<SellerPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/category/:categoryName" element={<CategoryPage />} />
+        <Route path="/menu" element={<Menu />} />
+        
       </Routes>
 
       <Footer />

@@ -25,14 +25,14 @@ function Cart() {
       {cart.length === 0 ? (
         <p>Your cart is empty</p>
       ) : (
-        cart.map((item, index) => (
+        cart.map((food) => (
           <div
-            key={index}
+            key={food.id}
             className="flex items-center gap-4 mb-5 border-b pb-4"
           >
 
             <img
-              src={item.image}
+              src={food.image}
               alt="image"
               className="w-20 h-20 object-cover rounded-xl"
             />
@@ -40,15 +40,15 @@ function Cart() {
             <div>
 
               <h2 className="font-bold">
-                {item.name}
+                {food.name}
               </h2>
 
               <p className="text-orange-500">
-                ₦{item.price}
+                ₦{food.price.toLocaleString()}
               </p>
 
                <button
-              onClick={() => removeItem(item.id)}
+              onClick={() => removeItem(food.id)}
               className="bg-red-500 text-white px-3 py-1 rounded-lg"
             >
               X
@@ -63,7 +63,8 @@ function Cart() {
       )}
         <p className="w-full bg-black text-white py-4 rounded-2xl mt-6 pl-6 font-semibold
          hover:bg-orange-500 transition">
-              Total={total}</p>
+              Total= {total.toLocaleString()}</p>
+              
     </div>
   );
 }

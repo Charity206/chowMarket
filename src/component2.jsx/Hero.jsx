@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Herofood from "../assets/herofood.jpg";
+import CategoryPage from "../Pages.jsx/CategoryPage";
 
 function Hero() {
   return (
@@ -23,17 +24,19 @@ function Hero() {
           Fast delivery, secure payments, and fresh meals every day.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
+        <div className="flex flex-col sm:flex-row gap-4 mt-12 justify-center lg:justify-start">
           
-          <Link to="/foodgrid">
+          <Link to={`/category/Foodcategory`}>
             <button className="w-full sm:w-auto bg-orange-500 text-white px-8 py-4 rounded-2xl font-semibold hover:scale-105 transition">
               Order from the Menu
             </button>
           </Link>
 
+          <Link to="menu">
           <button className="w-full sm:w-auto bg-white border border-gray-300 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 transition">
             Explore Menu
           </button>
+          </Link>
 
         </div>
 

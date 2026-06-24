@@ -89,7 +89,7 @@ function Footer() {
 
             <li>support@chowmarket.com</li>
 
-            <li>+234 800 000 0000</li>
+            <li>+234 9037300125</li>
 
           </ul>
 

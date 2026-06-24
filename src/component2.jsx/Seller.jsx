@@ -6,19 +6,19 @@ function Seller() {
 
       {/* HERO */}
 
-      <section className="px-6 lg:px-16 py-5">
+      <section className="px-6 lg:px-16 md:py-12 lg:py-10 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16 overflow-hidden">
 
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
           {/* LEFT */}
 
-          <div>
+          <div className="max-w-2xl text-center lg:text-left">
 
             <p className="text-orange-500 font-semibold mb-4">
               Become A Vendor
             </p>
 
-            <h1 className="text-5xl lg:text-7xl font-black leading-tight">
+            <h1 className="text-3xl lg:text-7xl font-black leading-tight">
 
               Grow Your <br />
               Food Business <br />
@@ -26,7 +26,7 @@ function Seller() {
 
             </h1>
 
-            <p className="text-gray-500 text-lg leading-relaxed mt-6 max-w-xl">
+            <p className="text-gray-500 text-base leading-relaxed mt-6 max-w-xl">
 
               Reach more customers, receive orders online,
               and grow your food business faster with ChowMarket.
@@ -35,17 +35,24 @@ function Seller() {
 
             <div className="flex flex-col sm:flex-row gap-4 mt-10">
 
-              <button className="bg-orange-500 text-white px-8 py-4 rounded-2xl font-semibold hover:scale-105 transition">
+              <a href="#start-selling">
+                <button className="bg-orange-500 text-white px-8 py-4 rounded-2xl font-semibold hover:scale-105 transition">
 
                 Start Selling
 
               </button>
 
-              <button className="border border-gray-300 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-100 transition">
+              </a>
+              <a href="#learn-more">
+                <button className="border border-gray-300 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-100 transition">
 
                 Learn More
 
               </button>
+                
+
+              </a>
+              
 
             </div>
 
