@@ -130,6 +130,7 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../context.jsx/CartContext";
 import { Link } from "react-router-dom";
+import { ShoppingCart, Menu } from "lucide-react";
 
 function Header() {
   const { cart, setShowCart } = useContext(CartContext);
@@ -187,16 +188,16 @@ function Header() {
 
             <button
               onClick={() => setShowCart(true)}
-              className="cursor-pointer bg-orange-500 text-white px-4 py-2 rounded-xl font-semibold"
+              className="cursor-pointer bg-orange-500 text-white px-4 py-2 rounded-xl font-semibold flex items-center gap-2 cursor-pointer bg-orange-500 text-white px-4 py-2 rounded-xl font-semibold"
             >
-              🛒 {cart.length}
+               <ShoppingCart  size={18}/> {cart.length}
             </button>
 
             <button
               onClick={() => setMenuOpen(true)}
               className="cursor-pointer text-3xl font-bold"
             >
-              ☰
+             <Menu size={22} />
             </button>
 
           </div>
